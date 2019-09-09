@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="btf-8">
+    <title>码蜂社前端例子</title>
+    <meta name="keywords"content="HTML,CSS,JavaScript">
+    <meta http-equiv="refresh" content="10">
+
+</head>
+<body>
+    <h1>1</h1>
+    <h2>2</h2>
+    <h3>3</h3>
+
+</body>
+
+</html>
