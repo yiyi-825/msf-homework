@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0
+        }
+        *{
+            box-sizing: border-box
+        }
+        .left{
+            float: left;
+            widows: 100px;
+        }
+        .left a{
+            display: block
+        }
+        .right{
+            float: left;
+            width: calc(100% - 102px);
+            height: 100vh;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <div class="left">
+        <a href="https://git-scm.com/book/zh/v2" target="iframe1">GitBook</a>
+        <a href="https://work.mafengshe.com/" target="iframe1">码蜂社</a>
+        <a href="https://bbs.mafengshe.com/" target="iframe1">码蜂社论坛</a>
+    </div>
+    <iframe name="iframe1" src="http://www.baidu.com" class="right"></iframe>
+</body>
+
+</html>
