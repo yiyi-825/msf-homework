@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>form</title>
+</head>
+
+<body>
+    <form action="/getInfo" method="POST">
+        <div>
+            用户名<input type="text" name="uesername" />
+        </div>
+        <div>
+            密码<input type="password" name="password" />
+        </div>
+        <div>
+            email<input type="email" name="email" required />
+        </div>
+        <div>
+            number<input type="number" name="number" min="0" max="100" step="2">
+        </div>
+
+        <div>居住城市选择
+             <input list="city">
+             <datalist id="city">
+                <option value="北京">
+                <option value="上海">
+                <option value="广州">
+                <option value="深圳">
+             </datalist>
+        </div>
+      
+       <input type="submit" value="确认" />
+       <input type="submit" value="重置" />
+   </form> 
+
+</body>
+
+</html>
