@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .item{
+            position:relative;
+        }
+        .item:hover{
+            color:red;
+        }
+        ul{
+            display:none;
+            list-style: none;
+        }
+        .item:hover ul{
+            display:block ;
+            position:absolute;
+            top:16px;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <span class="item">
+        导航一
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </span>
+    <span class="item">
+            导航二
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </span>
+
+</body>
+</html>
