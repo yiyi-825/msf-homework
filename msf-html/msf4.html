@@ -6,12 +6,12 @@
 </head>
 
 <body>
-    <form action="/getInfo">
+    <form action="/getInfo" method="POST">
         <div>
             用户名<input type="text" name="uesername" />
         </div>
         <div>
-            密码<input type="password" name="password" />
+            密码<input type="password" name="password" required/>
         </div>
          <div>单选
             <input type="radio" name="sex" value="1" />男
