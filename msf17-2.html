@@ -1,0 +1,159 @@
+<!DOCTYPE html>            
+
+<html>            
+
+<head>            
+    <meta charset="UTF-8">        
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">      
+    <title>骰子的布局（flex）</title>          
+    <style type="text/css">    
+        body{margin: 0}  
+        .m-container{
+            margin: 5px; 
+            padding: 5px;
+            width:100px;
+            height: 100px;
+            border:1px solid green;
+            }
+        .m-item {
+            margin: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px ;
+            background-color:black;
+            }
+        .box1 {
+            display: flex;
+            justify-content:center;
+            align-items: center;
+             }  /*水平居中*/
+      
+        .box2 {
+            display: flex;
+            justify-content: space-between;
+            }  /*水平居中，垂直靠下*/
+        .box2 .m-item:nth-child(2){
+            align-self: flex-end;
+        }  
+        .box3 {
+            display: flex;
+           
+            }  /*水平靠右*/
+
+        .box3 .m-item:nth-child(2){
+            align-self:center;
+        }  
+        .box3 .m-item:nth-child(3){
+            align-self: flex-end;
+        }  
+      
+
+
+        .box4 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            }
+        .box4 .colunm{
+            display: flex;
+            flex-basis: 100%;
+            justify-content: space-between;
+            }
+       
+        .box5 {
+            display: flex;
+            flex-wrap: wrap;
+            }
+        .box5 .colunm{
+            display: flex;
+            flex-basis: 100%;
+            justify-content: space-between;
+            }
+        .box5 .colunm:nth-child(2){
+            justify-content:center;
+        }
+        
+        .box6 {
+            display: flex;
+            flex-wrap: wrap;;
+            justify-content: space-between;
+            }
+        .box6 .colunm{
+            display: flex;
+            flex-basis: 100%;
+            justify-content: space-between;
+            }
+    
+    
+    </style>          
+</head>            
+
+<body>         
+    <div class="m-container box1">
+        <span class="m-item"></span>
+    </div>
+
+    <div class="m-container box2">
+        <span class="m-item"></span>
+        <span class="m-item"></span>
+    </div>
+
+    <div class="m-container box3">
+        <span class="m-item"></span>
+        <span class="m-item"></span>
+        <span class="m-item"></span>
+    </div>
+
+    <div class="m-container box4">
+        <div class="colunm">
+            <span class="m-item"></span>
+            <span class="m-item"></span>
+        </div>
+        <div class="colunm">
+                <span class="m-item"></span>
+                <span class="m-item"></span>
+        </div>
+           
+        
+       
+    </div>
+
+    <div class="m-container box5">
+
+         <div class="colunm">
+            <span class="m-item"></span>
+            <span class="m-item"></span>
+        </div>
+        <div class="colunm">
+            <span class="m-item"></span>    
+        </div>
+        <div class="colunm">
+            <span class="m-item"></span>
+            <span class="m-item"></span>
+        </div>
+
+    </div>
+    <div class="m-container box6">
+            <div class="colunm">
+                <span class="m-item"></span>
+                <span class="m-item"></span>
+             
+            </div>
+            <div class="colunm">
+                    <span class="m-item"></span>
+                    <span class="m-item"></span>
+              
+            </div>
+            <div class="colunm">
+                    <span class="m-item"></span>
+                    <span class="m-item"></span>
+           
+            </div>
+               
+            
+           
+        </div>
+</body>            
+
+</html>  
