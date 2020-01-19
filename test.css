@@ -1,0 +1,240 @@
+body{
+    margin:0;
+    background-color: #ebebeb;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+
+
+
+.header{
+    background-image: url(https://www.golaravel.com/assets/images/header-bg.jpg);
+    padding: 62px 0 51px 0;
+    background-origin:padding-box;
+    background-position-x:50%;
+    background-position-y:20%;
+    background-size: cover
+}
+
+.header h1{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+
+.header svg{
+    height:120px;
+    padding: 0 0 40px 0
+}
+
+.navi{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-bottom: 2px #e1e1e1 solid;
+}
+
+.navia{
+    text-decoration: none;
+    color: #505050;
+    padding: 20px 25px;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+
+.navia:hover{
+    color: rgb(244, 100, 95)
+}
+
+.section{
+    max-width: 1170px;
+    background-color: #ebebeb;
+    display: flex;
+    justify-content: space-between;
+    margin:0 auto;
+}
+
+.article{
+    width: 750px;
+    background-color: white;
+    margin: 35px 15px 15px;
+    padding-top: 36px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+
+.article a{
+    text-decoration: none;
+    color:black
+}
+
+.atitlem{
+    font-size: 14px;
+    text-align: center;
+    margin-top: 18px;
+    color: rgb(149,149,149);
+}
+
+.atitlem a{
+    color: rgb(244, 100, 95);
+    margin-right: 5px;
+}
+
+.atitleh{
+    font-size: 28px;
+    text-align: center;
+    font-weight: 400;
+    margin: 0;
+}
+
+.amedia{
+    text-align: center;
+    margin-top: 35px;
+}
+
+.acontent{
+    margin: 20px 35px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Georgia, "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+    color: #444443;
+}
+
+.acontent a{
+    color: rgb(244, 100, 95);
+}
+
+.alink{
+    width: 86px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background-color: rgb(244, 100, 95);
+    border-radius: 3px;
+    margin:25px 35px;
+}
+
+.afooter{
+    margin:25px 35px;
+    padding-bottom: 50px;
+    width:680px;
+    border-top: 1px solid #ebebeb;
+}
+
+.alink a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.aside{
+    width: 390px;
+    height: 550px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px; 
+    margin: 35px 15px;
+}
+
+.asidea{
+    background-color: rgb(244,100,95);
+    padding:8px;
+    margin:2px 25px;
+    text-align: center;
+    color: white;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.asideh{
+    margin:20px 25px 20px;
+    padding-bottom: 7px;
+    font-weight: 400;
+    font-size: 21px;
+    border-bottom: 1px #ebebeb solid;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+    position: relative;
+}
+
+.asideh:after{
+    content: '';
+    width: 90px;
+    background-color:  rgb(244,100,95);
+    height: 1px;
+    display: block;
+    position: absolute;
+    bottom: -1px;
+}
+
+.footer{
+    background-color: rgb(32,32,32);
+}
+
+.footer h3{
+    color: white;
+    border-bottom: 1px solid rgb(48,48,48);
+}
+
+.container{
+    max-width: 780px;
+    display: flex;
+    justify-content: space-between;
+    margin:0 auto;
+}
+
+.date{
+    color: rgb(80,80,80)
+}
+
+.recenta{
+    width:390px;
+    margin:20px 20px;
+}
+
+.recentsingle{
+    margin:14px 25px;
+    padding:0 0 14px;
+    border-bottom: 1px dashed rgb(48,48,48);
+    font-size: 14px;
+    line-height: 24.5px;
+}
+
+.recentsingle a{
+    text-decoration: none;
+    color: rgb(149,149,149);
+}
+
+.friendlink{
+    width:390px;
+    margin:20px 20px;
+}
+
+.friendlinkcontent{
+    margin:25px;
+}
+
+.friendsingle{
+    font-size: 14px;
+    text-decoration: none;
+    color: rgb(149,149,149);
+    line-height: 21px;
+    display: inline-block;
+    padding: 2px 7px;
+    margin: 0 7px 7px 0;
+}
+
+.copyright{
+    text-decoration: none;
+    height: 81px;
+    background-color: rgb(17,17,17);
+    line-height: 81px;
+    text-align: center;
+    color: rgb(80,80,80);
+    font-size: 13px;
+}
+
+.copyright a{
+    text-decoration: none;
+    color: rgb(80,80,80);
+}

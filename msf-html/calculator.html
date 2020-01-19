@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="en">
+    <head>    
+    <meta charset="utf-8">
+        <style>
+
+            .counter{
+                width: 396px;
+                height: 486px;
+                background-color: #227c92;
+                border: 1px solid #C2C3C6;
+                margin: 50px auto;
+
+            }
+            #box {
+                height: 70px;
+                width: 336px;
+                background-color: #faf8f8;
+                border: none;
+                margin: 40px 25px 32px 25px;
+                font: 700 40px/70px "微软雅黑";
+                color: #1cc96a;
+                padding-right: 10px;
+            }
+    
+            .funct {
+                padding: 0 20px;
+                position: relative;
+
+            }
+  
+            .funct input {
+                height: 40px;
+                width: 60px;
+                margin: 10px 10px;
+                font: 400 20px/40px "微软雅黑";
+            }
+    
+            .funct #res {
+                width: 150px;
+            }
+            #add, #reduce, #round, #sum {
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+            }
+     
+            #reduce {
+                right: 30px;
+                top: 60px;
+            }
+
+            #add {
+                right: 30px;
+                top: 120px;
+            }
+
+            #sum {
+                height: 100px;
+                right: 30px;
+                bottom: 0px;
+            }
+   
+            #round {
+                right: 120px;
+                bottom: 0px;
+            }
+
+            #zero {
+                width: 150px;
+            }
+            
+
+            .numb {
+                width: 280px;
+            }
+
+        </style>
+
+        <script>
+        window.onload = function(){
+
+            
+            var left = 0;   //被除数
+            var right = 0;  //除数
+            var sum = 0;    //和  
+
+            var numb = 0;     
+      
+            function $(id){
+                return document.getElementById(id);
+            }
+        
+             function operation(id){            
+                if( $("box").value != "0"){
+                    if(left == 0)
+                    {
+                        $("box").value = $("box").value + $(id).value;
+                        left = parseFloat($("box").value);
+                    }
+                }
+
+                numb = 0;
+            }
+
+    
+            function figure(id){ 
+          
+                if(left == 0)
+                {
+                    
+                    if ($("box").value === "0" ) {
+                        $("box").value = $(id).value; 
+                    }else{
+                        $("box").value = $("box").value + $(id).value;    
+                    }                                
+                }else{
+                    $("box").value = $("box").value + $(id).value;
+                    var str = $("box").value;
+                    var num = "";                    
+
+                    for (var i = 0; i < str.length; i++) {
+   
+                        if(str[i]== "+"){
+                            for (var j = i + 1; j < str.length; j++) {
+                                num+=str[j];
+                                
+                            };
+                            right = parseFloat(num);
+                        }else if(str[i]== "-"){
+                            for (var j = i + 1; j < str.length; j++) {
+                                num+=str[j];
+                                
+                            };
+                            right = parseFloat(num);
+                        }
+                        else if(str[i]== "*"){
+                            for (var j = i + 1; j < str.length; j++) {
+                                num+=str[j];
+                                
+                            };
+                            right = parseFloat(num);
+                        }
+                        else if(str[i]== "/"){
+                            for (var j = i + 1; j < str.length; j++) {
+                                num+=str[j];
+                                
+                            };
+                            right = parseFloat(num);
+                        }
+                    };                    
+                }
+
+
+                if(sum != 0){
+                    left = 0;
+                    right = 0;
+                    sum = 0;
+                    numb = 0;
+                    $("box").value = $(id).value;
+                }
+            
+            }
+
+            $("one").onclick = function(){ 
+                figure("one");
+            }
+            $("two").onclick = function(){ 
+                figure("two");
+            }
+            $("three").onclick = function(){ 
+                figure("three");
+            }
+            $("four").onclick = function(){ 
+                figure("four");
+            }
+            $("five").onclick = function(){ 
+                figure("five");
+            }
+            $("six").onclick = function(){ 
+                figure("six");
+            }
+            $("seven").onclick = function(){ 
+                figure("seven");
+            }
+            $("eight").onclick = function(){ 
+                figure("eight");
+            }
+            $("nine").onclick = function(){ 
+                figure("nine");
+            }
+            $("zero").onclick = function(){ 
+                figure("zero");
+            }
+ 
+
+
+            $("add").onclick = function(){             
+                operation("add");
+            }
+
+
+           
+            $("reduce").onclick = function(){             
+                operation("reduce");
+            }
+
+          
+                $("ride").onclick = function(){
+                operation("ride");
+            }
+            
+         
+            $("division").onclick = function(){
+                operation("division");
+            }
+
+        
+            $("round").onclick = function(){
+               
+                if(numb === 0 && sum == 0){                    
+                    $("box").value = $("box").value + $("round").value;
+                    numb = ($("box").value); 
+                }
+
+            }
+
+     
+            $("res").onclick = function(){
+                if($("box").value != "0")
+                {                        
+                    left = 0;
+                    right = 0;
+                    sum = 0;
+                    numb = 0;
+                    $("box").value = "0";
+                }
+            }
+
+
+            $("sum").onclick = function(){  
+                var symbol = "";           
+                if(left != 0 && right != 0){
+                    for (var i = 0; i < $("box").value.length; i ++ ) {
+                        symbol = $("box").value[i];
+                        if(symbol == "+"){
+                            sum = left + right;
+                            $("box").value = sum;
+                        }else if(symbol == "-"){
+                            sum = left - right;
+                            $("box").value = sum;
+                        }
+                        else if(symbol == "*"){
+                            sum = left * right;
+                            $("box").value = sum;
+
+                        }
+                        else if(symbol == "/"){
+                            sum = left / right;
+                            $("box").value = sum;
+                        }
+                    };
+                }                            
+            }
+            
+        }
+
+        </script>
+    </head>
+    <body>
+
+        </div>
+
+        <div class="counter">
+            <input type="text" id="box" style="text-align:right" readOnly="true" value="0">
+            <div class="funct">
+                <input type="reset" id="res" value="C">
+                <input type="button" id="division" value="/">
+                <input type="button" id="ride" value="*">
+
+                <input type="button" id="add" value="+">
+                <input type="button" id="reduce" value="-">                                
+                <input type="button" id="round" value=".">
+                <input type="button" id="sum" value="=">    
+               
+                <div class="numb">
+                    <input type="button" id="one" value="1">
+                    <input type="button" id="two" value="2">
+                    <input type="button" id="three" value="3">
+                    <input type="button" id="four" value="4">
+                    <input type="button" id="five" value="5">
+                    <input type="button" id="six" value="6">
+                    <input type="button" id="seven" value="7">
+                    <input type="button" id="eight" value="8">
+                    <input type="button" id="nine" value="9">
+                    <input type="button" id="zero" value="0">
+                </div>                        
+            </div>                            
+        </div>
+        
+    </body>
+</html>

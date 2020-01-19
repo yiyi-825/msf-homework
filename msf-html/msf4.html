@@ -2,33 +2,35 @@
 <html>
 
 <head>
-    <title>form</title>
+     <meta charset="utf-8">
+     <title>Picture</title>
+     <meta name="keywords" content="HTML,CSS,JavaScript">
+     <meta http-equiv="refresh" content="10">
+     <title>form</title>
 </head>
 
 <body>
     <form action="/getInfo" method="POST">
-        <div>
-            用户名<input type="text" name="uesername" />
-        </div>
-        <div>
-            密码<input type="password" name="password" required/>
-        </div>
-         <div>单选
-            <input type="radio" name="sex" value="1" />男
-            <input type="radio" name="sex" value="2" />女
-        </div>
-        <div>多选
-            <input type="checkbox" name="checkbox" value="html" />THML
-            <input type="checkbox" name="checkbox" value="CSS" />CSS
-            <input type="checkbox" name="checkbox" value="JS" />JavaScript
-        </div>
+       
+         <div>
+             <p>省市联动</p>
+         </div>
         <div>居住城市选择
              <select name="city">
-                <option></option>
-                <option value="a">北京</option>
-                <option value="b">上海</option>
-                <option value="c">深圳</option>
+             <option value="a">北京</option>
+             <option value="b">上海</option>
+             <option value="c">重庆</option>
         </div>
+        
+        <div>居住区县选择
+                <input list="city">
+                <datalist id="city">
+                   <option value="渝北区">
+                   <option value="沙坪坝区">
+                   <option value="渝中区">
+                   <option value="巴南区">
+                </datalist>
+           </div>
       
        <input type="submit" value="确认" />
        <input type="submit" value="重置" />

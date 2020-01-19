@@ -1,0 +1,9 @@
+paper {Display:block;Font-size:20px;Line-height:160%;Text-align:center;}
+author{Display:block;Font-size:16px;margin-top:5px;margin-buttom:5px;}
+Address{Display:block;Font-size:16px;Text-align:center;}
+abstract{Display:block;Font-size:14px;font-weight:bold;font-style:italc;LText-align:left;}
+abstract#a1{Display:block;Font-size:14px;font-weight:normal;font-style:normal;Line-height:150%;}
+keywords{Display:block;Font-size:20px;font-weight:bold;font-style:italc; }
+keywords#a1{Display:block;Font-size:14px;font-weight:normal;font-style:normal;Line-height:150%;}
+head{Display:block;Font-size:20px;Line-height:150%;}
+text{Display:block;Font-size:18px;Line-height:150%;Text-align:left;text-indent:30pt;}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+</head>
+<style>
+  select {
+    width: 80px;
+
+
+  }
+</style>
+
+<body>
+
+  <select name="province" id="province" onchange="provinceC"></select>
+  <select name="city" id="city"></select>
+  <select name="area" id="area"></select>
+
+  <script>
+
+
+
+    function IninDepart() {
+      //清空select列表数据
+      var state = 1;
+      $.ajax({
+        method: "POST",
+        url: "/province",
+        dataType: "JSON",
+        data: {},
+        success: function (data) {
+          var jsonStr1 = data;
+          var s_province = document.getElementById("province")
+          for (let i = 0; i < jsonStr1.length; i++) {
+            var node = document.createElement("option")
+            node.innerText = jsonStr1[i]
+            node.id = i
+            s_province.appendChild(node)
+
+          }
+
+          console.log(jsonStr1)
+
+        }
+
+        , error: function () {
+
+        }
+      });
+    }
+
+
+    /**************************************************************************/
+
+    function cityS() {
+      var str = $('#city').val()
+      console.log(str)
+
+      $.ajax({
+        method: "POST",
+        url: "/area",
+        dataType: "JSON",
+        data: { str },
+        success: function (data) {
+          var area = data
+          console.log(area.length)
+          console.log(area)
+          var s_area = document.getElementById("area")
+          if (s_area.innerHTML != null) {
+            s_area.innerHTML = "";
+          }
+          for (let i = 0; i < area.length; i++) {
+            var node = document.createElement("option")
+            node.innerText = area[i]
+            s_area.appendChild(node)
+          }
+        }
+        , error: function () {
+
+        }
+      });
+    }
+    
+    document.getElementById("city").onchange = cityS
+    /******************************************************************/
+    document.getElementById("province").onchange = function provinceC() {
+      var s_area = document.getElementById("area")
+      s_area.innerHTML = ""
+      var str = $('#province').val()
+      console.log(str)
+
+      var x;
+
+      $.ajax({
+        method: "POST",
+        url: "/city",
+        dataType: "JSON",
+        data: { str },
+        success: function (data) {
+          var city = data
+          console.log(city.length)
+          console.log(city)
+          var s_city = document.getElementById("city")
+          if (s_city.innerHTML != null) {
+            s_city.innerHTML = "";
+          }
+
+          for (let i = 0; i < city.length; i++) {
+            var node = document.createElement("option")
+            if (i == 0) {
+              x = city[i]
+            }
+            node.innerText = city[i]
+            node.id = i
+            s_city.appendChild(node)
+          }
+        }
+        , error: function () {
+
+        }
+      });
+      /*********************************************/
+
+
+
+      $.ajax({
+        method: "POST",
+        url: "/area",
+        dataType: "JSON",
+        data: { x },
+        success: function (data) {
+
+          var area = data
+          console.log(area.length)
+          console.log(area)
+          var s_area = document.getElementById("area")
+          if (s_area.innerHTML != null) {
+            s_area.innerHTML = "";
+          }
+
+          for (let i = 0; i < area.length; i++) {
+            var node = document.createElement("option")
+            node.innerText = area[i]
+
+            s_area.appendChild(node)
+
+          }
+        }
+
+        , error: function () {
+
+        }
+      });
+
+      /************************************************/
+    }
+    IninDepart()
+
+  </script>
+</body>
+
+</html>
