@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .title {
+        border: 1px solid #333;
+        padding: 10px 40px;
+        border-radius: 10px;
+        font-weight: 500;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: fit-content;
+        height: fit-content;
+    }
+    .English {
+        font-size: 12px;
+    }
+    .Chinese {
+        margin-top: 8px;
+        font-size: 28px;
+    }
+    .Circle {
+        border: 24px solid yellow;
+        border-radius: 24px;
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        left: 560px;
+        top: 48px;
+    }
+     .Triangle {
+        position: absolute;
+        top: -24px;
+        left: 720px;
+    }
+    </style>
+</head>
+<body>
+        <div class="title">
+                <p class="English">SHARED COURSE</p>
+                <p class="Chinese">课程分享</p>
+         </div>
+            <div class="Circle"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="60px" viewBox="0 0 30 60" class="Triangle">
+            <polygon points="0,40 20,0 30,60" style="fill:yellow" /></svg>
+</body>
+</html>
