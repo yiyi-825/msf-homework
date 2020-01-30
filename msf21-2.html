@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .sub{
+            width: 300px;
+            float: left;
+            margin-left: -100%;
+            position: relative;
+            left: -300px;
+        }
+        .extra{
+            width: 500px;
+            float: left;
+            margin-left: -500px;
+            position: relative;
+            right: -500px;
+        }
+        .main{
+            float: left;
+            width: 100%;
+        }
+        #cotent{
+            padding-left: 300px;
+            padding-right: 500px;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="content">
+        <div class="main">main</div>
+        <div class="sub">sub</div>
+        <div class="extra">extra</div>
+    </div>
+    
+</body>
+</html>
