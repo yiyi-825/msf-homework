@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       
+        .container {
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            margin-left: -32px;
+            margin-top: -32px;
+            transform-origin: 16px 16px;
+            animation: rotate 5s linear infinite;
+        }
+        .circle{
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            animation:move 2.5s linear infinite;
+            
+        }
+        .container .circle-container{
+            transform-origin: 4px 4px;
+        }
+        .container .circle-container:nth-child(1){
+            transform: rotate(0deg);
+        }
+        .container .circle-container:nth-child(2){
+            transform: rotate(90deg);
+        }
+        .container .circle-container:nth-child(3){
+            transform: rotate(180deg);
+        }
+        .container .circle-container:nth-child(4){
+            transform:rotate(270deg);
+        }
+        .blue{
+            background: #1f4e5a;
+        }
+        .green{
+            background: #00a691;
+        }
+        .red{
+            background: #ff5955;
+        }
+        .yellow{
+            background: #ffb265;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle-container">
+            <div class="circle blue"></div>
+        </div>
+
+        <div class="circle-container">
+            <div class="circle green"></div>
+        </div>
+
+        <div class="circle-container">
+            <div class="circle red"></div>
+        </div>
+        
+        <div class="circle-container">
+            <div class="circle yellow"></div>
+        </div>
+            
+    </div>
+ 
+</body>
+</html>

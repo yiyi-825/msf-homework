@@ -34,7 +34,10 @@ from后边的是起始帧，to后边的是终止状态
 
 # 代码题
 ## 实现码蜂社官网 导航栏效果（颜色渐变效果改为 hover 时触发，下拉动画需要实现）
-
+代码：https://github.com/yiyi-825/msf-homework/blob/master/msf22-1.html
+预览：https://yiyi-825.github.io/msf-homework/msf22-1.html
 
 
 ## 实现这里的 loading 效果
+代码：https://github.com/yiyi-825/msf-homework/blob/master/msf22-2.html
+预览：https://yiyi-825.github.io/msf-homework/msf22-2.html
