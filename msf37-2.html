@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .titlp{
+            margin:0 10px;
+            height: 100%;
+            width: 50%;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="titlp" id="award"> 点击开始按钮，开始抽奖</div>
+    <div class="action">
+        <button id="start">开始</button>
+        <button id="stop">停止</button>
+    </div>
+    <script>
+        var userdata={award:0}
+        function change(obj){
+            var randomNum=Math.floor((Math.random()*100)+1)
+            obj.award=randomNum
+        }
+        function start(){
+            setInterval(change(userdata),10)
+        }
+        function stop(){
+            clearInterval()
+            if(userdata.award==1){alert("恭喜您获得了特等奖")}
+            if(userdata.award>1 && 20>=userdata.award){alert("恭喜您获得了鼓励奖！再接再厉")}
+            if(userdata.award>20 && 30>=userdata.award){alert("恭喜您获得了一等奖")}
+            if(userdata.award>30 && 60>=userdata.award){alert("恭喜您获得了二等奖")}
+            if(userdata.award>60){alert("恭喜您获得了三等奖")}
+        }
+        document.getElementById("start").onclick=start
+        document.getElementById("stop").onclick=stop
+    </script>
+</body>
+</html>

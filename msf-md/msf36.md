@@ -24,3 +24,5 @@ cxt.fillStyle="#FF0000";
 
 # 代码题
 ## 请使用 Canvas 绘制钟表，并可以动态显示当前时间
+代码：https://github.com/yiyi-825/msf-homework/blob/master/msf36.html
+预览：https://yiyi-825.github.io/msf-homework/msf36.html
