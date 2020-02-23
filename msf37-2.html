@@ -27,7 +27,7 @@
             obj.award=randomNum
         }
         function start(){
-            setInterval(change(userdata),10)
+            setInterval(function(){change(userdata)},10)
         }
         function stop(){
             clearInterval()
