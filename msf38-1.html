@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="signup" action="a" target="_blank" onsubmit="return onSignupFormSubmit()">
+        <p id="signup-error" style="color: red;"> </p> 
+        <p>
+            用户名：<input type="text" id="username" name="username">
+        </p>
+        <p>
+            密码：<input type="password" id="password" name="password">
+        </p>
+        <p>
+            重复密码：<input type="password" id="password-2">
+        </p>
+        <p>
+            <button type="submit" >提交</button>
+            <button type="reset">重置</button>
+        </p>
+        <script>
+            function onSignupFormSubmit(){
+                var oUsername=document.getElementById("username");
+                var oPassword=document.getElementById("password");
+                var oPassword2=document.getElementById("password-2");
+                var oError=document.getElementById("signup-error");
+
+                var username=oUsername.value;
+                var password=oPassword.value;
+                var password2=oPassword2.value;
+
+                if(username.length > 10 || username.length < 3){
+                    oError.innerText="用户名必须是3-10位"
+                    return false;
+                }
+                if(password.length < 6||password.length > 20){
+                    oError.innerText="密码必须是6-20位"
+                    return false;
+                }
+                if(password!=password2){
+                    oError.innerText="两次密码必须保持一致"
+                    return false;
+                }
+                for(i=0;i<username.length;i++){
+                if(username[i] < 48 || 57 < username[i] < 65 || 90<username[i] <95||95<username[i] <97||username[i] >122){
+                    oError.innerText="用户名输入要是字母，数字或下划线"
+                    return false;
+                }
+            }
+                
+                return true;
+            }
+
+        </script>
+    </form>
+</body>
+</html>
