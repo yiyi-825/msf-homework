@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between
+    }
+
+    .item {
+
+      margin: 20px;
+      width: 60%;
+      height: 148px;
+      background-color: darksalmon;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .basket {
+      margin: 40px;
+      width: 20%;
+      background-color: firebrick;
+      position: relative;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="goods">
+      <div class="item" id="item1">商品1
+        <button onclick="add(1)">加入购物车</button>
+      </div>
+      <div class="item" id="item2">商品2
+        <button onclick="add(2)">加入购物车</button>
+      </div>
+      <div class="item" id="item3">商品3
+        <button onclick="add(3)">加入购物车</button>
+      </div>
+      <div class="item" id="item4">商品4
+        <button onclick="add(4)">加入购物车</button>
+      </div>
+      <div class="item" id="item5">商品5
+        <button onclick="add(5)">加入购物车</button>
+      </div>
+      <div class="item" id="item6">商品6
+        <button onclick="add(6)">加入购物车</button>
+      </div>
+      <div class="item" id="item7">商品7
+        <button onclick="add(7)">加入购物车</button>
+      </div>
+      <div class="item" id="item8">商品8
+        <button onclick="add(8)">加入购物车</button>
+      </div>
+      <div class="item" id="item9">商品9
+        <button onclick="add(9)">加入购物车</button>
+      </div>
+    </div>
+    <div class="basket" id="basket">
+      <h2>我的购物车</h2>
+    </div>
+
+    <script>
+      var basket_storage = window.localStorage
+
+      function add(a) {
+        if (document.querySelector(".basket #item" + a) == null) {
+
+          var basket = document.getElementById("basket")//购物车
+
+          var newdiv = document.createElement("div")//设置新的div，且添加div中的属性与value
+          newdiv.setAttribute("class", "basketitm")
+          newdiv.setAttribute("id", "item" + a)
+          newdiv.setAttribute("itemsum", "1")
+          basket.appendChild(newdiv)
+
+          var newcontent = document.createTextNode("商品" + a)
+          var newbr = document.createElement("br")
+          var newspan = document.createElement("span")
+          var newnum = document.createTextNode("数量:" + newdiv.getAttribute("itemsum"))
+          newspan.appendChild(newnum)
+          var newbtn = document.createElement("button")
+          var btncontent = document.createTextNode("删除")
+
+          newbtn.setAttribute("onclick", "delet(" + a + ")")
+          newdiv.appendChild(newcontent)
+          newdiv.appendChild(newbr)
+          newdiv.appendChild(newspan)
+          newdiv.appendChild(newbtn)
+          newdiv.appendChild(btncontent)
+
+          basket_storage["item" + a] = 1
+
+        }
+        else {
+          var item = document.querySelector(".basket #item" + a)//若存在购物车里边，就让item=我们选择的商品
+          var itemsum = item.getAttribute("itemsum")//获得商品的总数
+          itemsumN = Number(itemsum)
+          itemsumN = itemsumN + 1
+          item.setAttribute("itemsum", itemsumN)//将新值替换
+
+          var newnum = document.createElement("span")
+          var newsum = document.createTextNode("数量：" + itemsumN)
+          newnum.appendChild(newsum)
+          var oldnum = document.querySelector("#item" + a + " span")
+          item.replaceChild(newnum, oldnum)
+          var itemstorage = basket_storage["item" + a]
+          itemstorageN = Number(itemstorage)
+          itemstorageN = itemstorageN + 1
+          basket_storage["item" + a] = itemstorageN
+
+
+        }
+
+      }
+      function delet(a) {
+        var basket = document.getElementById("basket")
+        var basketi = document.querySelector(".basket #item" + a)
+        var itemsum = basketi.getAttribute("itemsum")
+        itemsumN = Number(itemsum)
+        if (itemsumN == 1) {
+          basket.removeChild(basketi)
+          var itemstorage = basket_storage["item" + a]
+          itemstorageN = Number(itemstorage)
+          itemstorageN = itemstorageN - 1
+          basket_storage["item" + a] = itemstorageN
+        }
+        else {
+          itemsumN = itemsumN - 1
+          basketi.setAttribute("itemsum", itemsumN)
+          var newnum = document.createElement("span")
+          var newsum = document.createTextNode("数量：" + itemsumN)
+          newnum.appendChild(newsum)
+          var oldnum = document.querySelector("#item" + a + " span")
+          basketi.replaceChild(newnum, oldnum)
+          var itemstorage = basket_storage["item" + a]
+          itemstorageN = Number(itemstorage)
+          itemstorageN = itemstorageN - 1
+          basket_storage["item" + a] = itemstorageN
+        }
+
+
+      }
+      function init() {
+
+        for (var a = 1; a < 10; a++) {
+
+          if (Number.isNaN(Number(basket_storage["item" + a])) == true) {
+            continue
+          }
+          if (Number(basket_storage["item" + a]) == 0) {
+            continue
+          }
+          if (document.querySelector(".cart #item" + a) == null) {
+            var basket = document.getElementById("basket")
+            var newdiv = document.createElement("div")
+            var itemnumber = basket_storage["item" + a]
+            newdiv.setAttribute("class", "basketitm")
+            newdiv.setAttribute("id", "item" + a)
+            newdiv.setAttribute("itemsum", Number(itemnumber))
+            basket.appendChild(newdiv)
+            var newcontent = document.createTextNode("商品" + a)
+            var newbr = document.createElement("br")
+            var newspan = document.createElement("span")
+            var newnum = document.createTextNode("数量：" + newdiv.getAttribute("itemsum"))
+            newspan.appendChild(newnum)
+            var newbtn = document.createElement("button")
+            var btncontent = document.createTextNode("删除")
+            newbtn.setAttribute("onclick", "delet(" + a + ")")
+            newdiv.appendChild(newcontent)
+            newdiv.appendChild(newbr)
+            newdiv.appendChild(newspan)
+            newdiv.appendChild(newbtn)
+            newbtn.appendChild(btncontent)
+
+          }
+          else {
+            continue
+          }
+        }
+      }
+
+      init();
+
+    </script>
+  </div>
+</body>
+
+</html>

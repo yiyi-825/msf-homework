@@ -1,10 +1,14 @@
 # 问答题
 ## 有哪些浏览器存储？他们各是如何使用的？
-
+1. cookie：用名/值对形式存储
+2. web Storage:使用localStorage或者sessionStorage
 
 
 ## Cookie 对比 Web Storage 有何异同？
-
+同：都可以存储浏览器数据
+异：
+1. cookie不适合存储大量的数据，而webStorage可以
+2. 请求时不会带webStorage 的数据，但请求的时候会带上cookie
 
 
 ## 请分析 JavaScript 中的对象与浏览器存储之间的差异
