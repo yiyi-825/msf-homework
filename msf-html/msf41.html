@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    网页
+    <script>
+        var xhr=new XMLHttpRequest()
+        xhr.open("GET","http://www.b.com/msf-homework/data.json")
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4){
+                console.log(xhr.responseText)
+            }
+        }
+        xhr.send()
+
+    </script>
+</body>
+</html>
