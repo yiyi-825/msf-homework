@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkPassword(str){
+            if(str.length<6){
+                return "密码长度应大于6个字符"
+            }
+            if(str.length>16){
+                return "密码长度应小于16个字符"
+            }
+            if(/^[a-zA-Z_][a-zA-Z0-9_]{5,15}$/g.test(str)){
+                return "首字符为字母或者下划线,应该包括小写字母，大写字母，数字，下划线,不能包括其他特殊字符"
+            }
+            var sum=0
+            if(/[a-z]/g.test(str)) sum++
+            if(/[A-Z]/g.test(str)) sum++
+            if(/[0-9]/g.test(str)) sum++
+            if(/_/g.test(str)) sum++
+            if(sum<3){
+                return "应该包括小写字母，大写字母，数字，下划线中的至少3个"
+            }
+            else{
+                return true
+            }
+        }
+
+
+        function addClass(str,clazz){
+            var reg=new RegExp(""+clazz+"")
+            if(reg.test(str)){
+                return str
+            }
+            else return str+""+reg
+        }
+
+        function removeClass(str,clazz){
+            var reg=new RegExp(""+clazz+"")
+            if(!reg.test(str)){
+                return str
+            }
+            else return str.replace(/s/g,"")
+        }
+        function getInfo(html){
+            var titleList=[]
+            var teacherList=[]
+            var timeList=[]
+            var titleReg=/<h4.*?>(.*?)<\/h4>/g
+            var teacherReg=/导师：<!\-\-.*?><!\-\-.*?>(.*g)<!\-\-.*?>/g
+            var timeReg=/时长：<!\-\-.*?><!\-\-.*?>(.*?)<!\-\-.*?>/g
+            var htmlList=html.split("</div>")
+            var outputList=[]
+            for(var i=0;i<htmlList.length;i++){
+                if(htmlList[i].match(titleReg))
+                titleList[titleList.length]=htmlList[i].match(titleReg)[1]
+
+                if(htmlList[i].match(teacherReg))
+                teacherList[teacherList.length]=htmlList[i].match(teacherReg)[1]
+                
+                if(htmlList[i].match(timeReg))
+                timeList[timeList.length]=htmlList[i].match(timeReg)[1]
+                
+            }
+            for(var i=0;i<titleList.length;i++){
+                var infoObj=new Object()
+                infoObj.title=titleList[i]
+                infoObj.teacher=teacherList[i]
+                infoObj.time=timeList[i]
+                outputList[outputList.length]=infoObj
+            }
+            return outputList
+        }
+    </script>
+</body>
+</html>

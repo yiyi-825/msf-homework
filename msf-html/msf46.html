@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Animal(name){
+            this.name=name
+        }
+        Animal.prototype.eat=function(){
+            return "I could eat"
+        }
+        Animal.prototype.sleep=function(){
+            return "I can sleep"
+        }
+        function Dog(name){
+            Animal.call(this,name)
+            this.name=name
+        }
+        Dog.prototype=Object.create(Animal.prototype)
+        Dog.prototype.bark=function(){
+            return "汪汪汪！"
+        }
+        function Cat(name){
+            Animal.call(this,name)
+            this.name=name
+        }
+        Cat.prototype=Object.create(Animal.prototype)
+        Cat.prototype.bark=function(){
+            return "喵喵喵！"
+        }
+        function Human(name){
+            Animal.call(this,name)
+            this.name=name
+        }
+        Human.prototype=Object.create(Animal.prototype)
+        Human.prototype.speak=function(){
+            return "I can speak Chinese"
+        }
+
+        var catLily=new Cat("Lily")
+        console.log(catLily.bark())
+        var dogTom=new Dog("Tom")
+        console.log(dogTom.bark())
+        var humanAnn=new Human("Ann")
+        console.log(humanAnn.speak())
+
+    </script>
+</body>
+</html>
