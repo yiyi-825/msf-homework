@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function emplyee(type){
+            var employee;
+            if(type=="programmer"){
+                employee=new programmer();
+            }
+            else if(type=="designer"){
+                employee=new designer();
+            }
+            employee.introduction=function(){
+                console.log("I am a "+this.position+",and"+this.tool)
+            }
+            return employee;
+        }
+        function programmer(){
+            this.position="Front end engineer"
+            this.tool="I love vscode"
+        }
+        function designer(){
+            this.position="UI desinger"
+            this.tool="I love PS"
+        }
+        var employee1=emplyee("programmer");
+        employee1.introduction();
+        var employee2=emplyee("desinger");
+        employee2.introduction();
+
+        function singleton(name){
+            this.name=name;
+        }
+        singleton.prototype.getName=function(){
+            return this.name
+        }
+        singleton.getInstance=function(){
+            if(!this.instance){
+                this.instance=new instance();
+            }
+            return this.instance;
+        }
+        var a=singleton.getInstance();
+        var b=singleton.getInstance();
+        console.log(a==b)
+
+
+        function instanceOf(boj,clazz){
+            if(obj.__proto__==clazz.prototype){
+                return true
+            }
+            else {
+                return flase;
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>

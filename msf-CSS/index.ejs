@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  </head>
+  <body>
+    <form method="get">
+      <p>username:<input type="text" id="u" name="username" /></p>
+      <p>password:<input type="text" id="u" name="password"/></p>
+      <input onclick="login()" type="button" value="submit" />
+      </form>
+    <script>
+      function login(){
+        let u=document.getElementById('u').value;
+        let p=document.getElementById('p').value;
+        $.ajax({
+        url:"htttp://www.b.com:3000/login",
+         data:{
+           username:u,
+           password:p,
+         }
+      })
+    }
+    </script>
+  </body>
+</html>
