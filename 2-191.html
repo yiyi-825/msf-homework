@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <parent></parent>
+    </div>
+    <script>
+        Vue.component("parent",{
+            data:function(){
+                return {a:0}
+            },
+            methods:{
+                childIncressment1(){
+                    this.a++;
+                },
+                childIncressment2(){
+                    this.a++;
+                }
+
+
+            },
+            template:`
+                <div classs='parent'>
+                    <p>a in parent:{{a}}</p>
+                    <child1 :message='a' @incressment1="childIncressment1"></child1>
+                    <child2 :message='a' @incressment2="childIncressment2"></child2>
+                </div>
+            `
+        })
+        Vue.component("child1",{
+            props:["message"],
+            data:function(){
+                return{a:0}
+            },
+            methods:{
+                btnClick(e){
+                    this.a++;
+                    this.$emit("incressment1")
+                }
+            },
+            template:`
+            <div class="child1">
+                <p>a in child1:{{a}}</p>
+                <button @click="btnClick">click1</button>
+            </div>
+            `
+        })
+        Vue.component("child2",{
+            props:["message"],
+            data:function(){
+                return{a:0}
+            },
+            methods:{
+                btnClick(e){
+                    this.a++;
+                    this.$emit("incressment2")
+                }
+            },
+            template:`
+            <div class="child1">
+                <p>a in child2:{{a}}</p>
+                <button @click="btnClick">click2</button>
+            </div>
+            `
+        })
+        var app=new Vue({
+            el:"#app",
+            data:{
+
+            }
+        })
+    </script>
+    
+</body>
+</html>

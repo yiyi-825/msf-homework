@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+    <title>Vue start</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .blue{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"><p class="clazz"  :style="style" :data-message="message">massage is:{{reverseMessage}</p>
+    <button @click="btnClick()">btn</button>
+    </div>
+    <script>
+      
+        var app=new Vue({
+            el:"#app",
+            data:{
+                message:"aaa",
+                clazz:["red","blue"],
+                style:{
+                    color:"green"
+                }
+
+            },
+            computed:{
+                reverseMessage:function(){
+                    return this.message.split("").reverse().join("");
+                }
+            },
+            methods:{
+                btnClick:function(){
+                    alert("click")
+                }
+            },
+            filters:{
+                reverseStr:function(str){
+                    return str.split("").reverse().join("");
+                },
+                keepStr:function(str){
+                    if(str.length>6)
+                        return str.substr(0,6);
+                    return str;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
